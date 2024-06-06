@@ -1,8 +1,6 @@
 require('dotenv').config();
 
-const path = require("path");
-app.use(express.static(path.join(__dirname, "build")));
-
+const path = require('path');
 const express = require('express');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
@@ -35,8 +33,8 @@ const corsOptions ={
 }
 app.use(cors(corsOptions));
 
+app.use(express.static(path.join(__dirname, "build")));
 
-app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 //Templating Engine
 app.use('/api/cards', require('./routes/cards'));
