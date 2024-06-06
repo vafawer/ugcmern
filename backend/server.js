@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+const path = require("path");
+app.use(express.static(path.join(__dirname, "build")));
+
 const express = require('express');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
